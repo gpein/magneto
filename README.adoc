@@ -1,5 +1,6 @@
 = Magneto
 
 image:https://travis-ci.org/gpein/magneto.svg?branch=master["Build Status", link="https://travis-ci.org/gpein/magneto"]
+image:https://api.codacy.com/project/badge/Grade/03be286cc9c8498a845ded8639ae022f["Codacy code quality", link="https://www.codacy.com/app/gpein/magneto?utm_source=github.com&utm_medium=referral&utm_content=gpein/magneto&utm_campaign=Badge_Grade"]
 
 The project is under license [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0).
