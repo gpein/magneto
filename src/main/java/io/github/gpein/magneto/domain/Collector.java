@@ -7,9 +7,12 @@ import io.github.gpein.magneto.domain.magnet.OldCollectionMagnet;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 import java.util.stream.Stream;
 
 public class Collector {
+
+    private String id = UUID.randomUUID().toString();
 
     private Set<NewCollectionMagnet> newDuplicates = new HashSet<>();
 
@@ -49,5 +52,9 @@ public class Collector {
 
     public Stream<NewCollectionMagnet> newDuplicates() {
         return newDuplicates.stream();
+    }
+
+    public String id() {
+        return id;
     }
 }
