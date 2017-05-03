@@ -1,6 +1,7 @@
 package io.github.gpein.magneto.domain.magnet;
 
 import lombok.Getter;
+import lombok.experimental.Accessors;
 
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -125,5 +126,10 @@ public enum Department {
 
     public static Optional<Department> of(int number) {
         return Stream.of(values()).filter(department -> department.number == number).findFirst();
+    }
+
+    @Override
+    public String toString() {
+        return number + " " + name;
     }
 }
