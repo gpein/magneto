@@ -15,7 +15,7 @@ import java.util.Collection;
 public class CollectorsController {
 
     @Autowired
-    CollectorRepository collectorRepository;
+    private CollectorRepository collectorRepository;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public Collection<Collector> all() {
