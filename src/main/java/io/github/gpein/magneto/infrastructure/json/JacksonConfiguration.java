@@ -15,7 +15,7 @@ public class JacksonConfiguration {
 
     @Primary
     @Bean
-    public ObjectMapper produce() {
+    public ObjectMapper configureJackson() {
         return new ObjectMapper()
                 .registerModule(new AfterburnerModule())
                 .setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY)
