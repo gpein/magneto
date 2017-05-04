@@ -49,8 +49,8 @@ public class CollectorsControllerTest {
         mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
 
         Collector collector = new Collector();
-        collector.seekForNewCollectionMagnetFor(Department.Charente);
-        collector.declareOldCollectionDuplicateFor(Department.Cher);
+        collector.lookForNewMagnet(Department.Charente);
+        collector.oldDuplicate(Department.Cher);
         collectors = Collections.singletonList(collector);
         given(mockCollectorRepository.all()).willReturn(collectors);
     }

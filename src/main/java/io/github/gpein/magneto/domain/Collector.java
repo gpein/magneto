@@ -22,19 +22,19 @@ public class Collector {
 
     private Set<OldCollectionMagnet> oldSeeked = new HashSet<>();
 
-    public boolean seekForOldCollectionMagnetFor(Department department) {
+    public boolean lookForOldMagnet(Department department) {
         return oldSeeked.add(OldCollectionMagnet.of(department));
     }
 
-    public boolean seekForNewCollectionMagnetFor(Department department) {
+    public boolean lookForNewMagnet(Department department) {
         return newSeeked.add(NewCollectionMagnet.of(department));
     }
 
-    public boolean declareNewCollectionDuplicateFor(Department department) {
+    public boolean newDuplicate(Department department) {
         return newDuplicates.add(NewCollectionMagnet.of(department));
     }
 
-    public boolean declareOldCollectionDuplicateFor(Department department) {
+    public boolean oldDuplicate(Department department) {
         return oldDuplicates.add(OldCollectionMagnet.of(department));
     }
 

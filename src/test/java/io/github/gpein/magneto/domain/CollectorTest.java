@@ -17,7 +17,7 @@ public class CollectorTest {
 
         Department gironde = Department.of(33).get();
 
-        collector.seekForOldCollectionMagnetFor(gironde);
+        collector.lookForOldMagnet(gironde);
 
         Assertions.assertThat(collector.oldSeeked()).containsExactly(OldCollectionMagnet.of(gironde));
     }
@@ -29,7 +29,7 @@ public class CollectorTest {
 
         Department gironde = Department.of(33).get();
 
-        collector.seekForNewCollectionMagnetFor(gironde);
+        collector.lookForNewMagnet(gironde);
 
         Assertions.assertThat(collector.newSeeked()).containsExactly(NewCollectionMagnet.of(gironde));
     }
@@ -40,7 +40,7 @@ public class CollectorTest {
 
         Department gironde = Department.of(33).get();
 
-        collector.declareNewCollectionDuplicateFor(gironde);
+        collector.newDuplicate(gironde);
 
         Assertions.assertThat(collector.newDuplicates()).containsExactly(NewCollectionMagnet.of(gironde));
     }
@@ -52,7 +52,7 @@ public class CollectorTest {
 
         Department gironde = Department.of(33).get();
 
-        collector.declareOldCollectionDuplicateFor(gironde);
+        collector.oldDuplicate(gironde);
 
         Assertions.assertThat(collector.oldDuplicates()).containsExactly(OldCollectionMagnet.of(gironde));
     }
