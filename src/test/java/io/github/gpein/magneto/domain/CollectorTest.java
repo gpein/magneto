@@ -11,7 +11,7 @@ public class CollectorTest {
 
 
     @Test
-    public void should_seek_for_old_magnet() {
+    public void shouldLookForOldMagnet() {
 
         Collector collector = new Collector();
 
@@ -23,7 +23,7 @@ public class CollectorTest {
     }
 
     @Test
-    public void should_seek_for_new_magnet() {
+    public void shouldLookForNewMagnet() {
 
         Collector collector = new Collector();
 
@@ -35,7 +35,7 @@ public class CollectorTest {
     }
 
     @Test
-    public void should_declare_duplicate_new_magnet() {
+    public void shouldAddNewDuplicate() {
         Collector collector = new Collector();
 
         Department gironde = Department.of(33).get();
@@ -46,7 +46,7 @@ public class CollectorTest {
     }
 
     @Test
-    public void should_declare_old_duplicate() {
+    public void shouldAddOldDuplicate() {
 
         Collector collector = new Collector();
 

@@ -45,7 +45,7 @@ public class CollectorsControllerTest {
     private Collection<Collector> collectors;
 
     @Before
-    public void setup() {
+    public void setUp() {
         mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
 
         Collector collector = new Collector();
@@ -56,7 +56,7 @@ public class CollectorsControllerTest {
     }
 
     @Test
-    public void all() throws Exception {
+    public void shouldGetAllCollectors() throws Exception {
         mockMvc.perform(get("/api/collectors")
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
