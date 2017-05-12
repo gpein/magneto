@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class Http2Configuration {
 
     @Bean
-    UndertowServletWebServerFactory embeddedServletContainerFactory() {
+    public UndertowServletWebServerFactory embeddedServletContainerFactory() {
         UndertowServletWebServerFactory factory = new UndertowServletWebServerFactory();
         factory.addBuilderCustomizers(builder -> builder.setServerOption(UndertowOptions.ENABLE_HTTP2, true));
         return factory;
