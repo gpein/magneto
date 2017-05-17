@@ -31,6 +31,7 @@
 
         <plugin.jacoco-maven-plugin.version>0.7.9</plugin.jacoco-maven-plugin.version>
         <plugin.asciidoctor-maven-plugin.version>1.5.5</plugin.asciidoctor-maven-plugin.version>
+        <plugin.maven-resources-plugin.version>3.0.2</plugin.maven-resources-plugin.version>
     </properties>
 
     <dependencies>
@@ -104,6 +105,32 @@
                         <configuration>
                             <backend>html5</backend>
                             <sourceHighlighter>coderay</sourceHighlighter>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${plugin.maven-resources-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>
+                                ${project.build.outputDirectory}/static/docs
+                            </outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>
+                                        ${project.build.directory}/generated-docs
+                                    </directory>
+                                </resource>
+                            </resources>
                         </configuration>
                     </execution>
                 </executions>
